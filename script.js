@@ -32,4 +32,30 @@ document.addEventListener("keydown", function (event) {
     statusMessage.textContent = "The focus object moved right.";
   } else {
     return;
-  }
+  } 
+  objectPosition = Math.max(-180, Math.min(180, objectPosition));
+  movingObject.style.transform = `translateX(${objectPosition}px)`;
+});
+
+// Mouse interaction
+movingObject.addEventListener("mouseenter", function () {
+  movingObject.style.transform =
+    `translateX(${objectPosition}px) scale(1.25)`;
+
+  movingObject.style.backgroundColor = "#fbbf24";
+  movingObject.textContent = "Energized!";
+  statusMessage.textContent = "Your mouse energized the focus object.";
+});
+movingObject.addEventListener("mouseleave", function () {
+  movingObject.style.transform =
+    `translateX(${objectPosition}px) scale(1)`;
+
+  movingObject.style.backgroundColor = "#38bdf8";
+  movingObject.textContent = "Focus";
+  statusMessage.textContent = "The focus object returned to normal.";
+});
+// Window/BOM interaction
+window.addEventListener("resize", function () {
+  statusMessage.textContent =
+    `Window size: ${window.innerWidth} × ${window.innerHeight}`;
+});
