@@ -18,3 +18,18 @@ themeButton.addEventListener("click", function () {
     statusMessage.textContent = "Focus mode restored.";
   }
 });
+const movingObject = document.querySelector("#moving-object");
+
+let objectPosition = 0;
+
+// Keyboard interaction
+document.addEventListener("keydown", function (event) {
+  if (event.key === "ArrowLeft") {
+    objectPosition -= 30;
+    statusMessage.textContent = "The focus object moved left.";
+  } else if (event.key === "ArrowRight") {
+    objectPosition += 30;
+    statusMessage.textContent = "The focus object moved right.";
+  } else {
+    return;
+  }
