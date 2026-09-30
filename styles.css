@@ -13,3 +13,13 @@ body {
   background: #0f172a;
   transition: background-color 0.5s ease;
 }
+.room {
+  width: min(100%, 700px);
+  min-height: 500px;
+  padding: 40px;
+  text-align: center;
+  background: #1e293b;
+  border: 2px solid #475569;
+  border-radius: 24px;
+  box-shadow: 0 20px 50px rgb(0 0 0 / 35%);
+}
